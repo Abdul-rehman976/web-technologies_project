@@ -22,3 +22,9 @@ const btns=$('.filters button');
 btns.forEach(b=>b.onclick=()=>{btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
 $('.mi').forEach(i=>i.hidden=b.dataset.f!=='all'&&i.dataset.c!==b.dataset.f)});
 $('#year')[0].textContent=new Date().getFullYear();
+
+/* Button hover: light follows the cursor + click ripple */
+$('.btn').forEach(b=>{
+b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--x',e.clientX-r.left+'px');b.style.setProperty('--y',e.clientY-r.top+'px')});
+b.addEventListener('pointerdown',e=>{const r=b.getBoundingClientRect(),s=Math.max(r.width,r.height)/4,d=document.createElement('span');d.className='rip';d.style.cssText=`width:${s}px;height:${s}px;left:${e.clientX-r.left-s/2}px;top:${e.clientY-r.top-s/2}px`;b.appendChild(d);d.onanimationend=()=>d.remove()});
+});
