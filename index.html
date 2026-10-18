@@ -1,19 +1,180 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Italian coffee house | Caffè di Kash</title><meta name="description" content="Caffè di Kash by Abdul Rehman: freshly roasted espresso, croissants baked every morning and a table that is always yours."><meta name="theme-color" content="#1D0E07">
-<link rel="icon" href="images/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head><body><a class="skip" href="#main">Skip to content</a>
-<header class="hd"><nav class="wrap nav"><a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
-<button class="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
-<ul class="links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="story.html">Our story</a></li><li><a href="visit.html">Visit</a></li><li><a class="btn gold sm" href="visit.html">Find us</a></li></ul></nav></header><main id="main">
-<section class="hero dark"><img src="images/cafe-hero.jpg" alt="Bright, plant-filled interior of Caffè di Kash with wooden tables and a leather banquette" width="1920" height="1088" fetchpriority="high">
-<div class="wrap hc"><h1>Your morning, poured the Italian way.</h1><p class="lead">Freshly roasted espresso, croissants baked at dawn and a table that is always yours.</p>
-<p class="cta"><a class="btn gold" href="menu.html">See the menu</a><a class="btn line" href="visit.html">Plan a visit</a></p></div>
-<div class="glass status"><b class="dot"></b><span data-open>Open daily</span></div></section>
-<div class="rib"><div class="wrap"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/><path d="M8 7c4 2 4 8 8 10"/></svg>Freshly roasted</span><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 5v3M4.5 9.5l2 2M19.5 9.5l-2 2"/></svg>Baked every morning</span><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>Made with care</span></div></div>
-<section class="cream"><div class="wrap"><div class="row"><div><h2>What our regulars order</h2><p class="lead">Three cups and plates that never leave the menu.</p></div><a class="lnk" href="menu.html">Full menu</a></div>
-<div class="grid"><article class="fav gl"><img src="images/cappuccino.jpg" alt="Cappuccino with heart latte art beside coffee beans" loading="lazy"><div class="glass"><div><h3>The Kash Cappuccino</h3><p>Velvety milk over a double shot.</p></div><span class="chip">$4.50</span></div></article><article class="fav gl"><img src="images/iced-latte.jpg" alt="Iced latte, matcha latte and cold brew on a stone bar" loading="lazy"><div class="glass"><div><h3>Iced Latte</h3><p>Cold, smooth and lightly sweet.</p></div><span class="chip">$5.00</span></div></article><article class="fav gl"><img src="images/croissant.jpg" alt="Fresh croissants and pastries in the glass display case" loading="lazy"><div class="glass"><div><h3>Butter Croissant</h3><p>Flaky, golden, baked at dawn.</p></div><span class="chip">$3.50</span></div></article></div></div></section>
-<section class="olive"><div class="wrap split"><div class="gl arch"><img src="images/cafe-interior.jpg" alt="Barista at the wooden counter inside Caffè di Kash" loading="lazy"></div>
-<div><h2>A little piece of Italy</h2><p class="lead">Abdul Rehman built Caffè di Kash around one idea: great coffee tastes better shared.</p><a class="btn gold" href="story.html">Read our story</a></div></div></section>
-<section class="dark glow ctr"><div class="wrap"><h2>Your table is waiting</h2><p class="lead">Drop by for a morning espresso or an afternoon catch-up.</p><a class="btn gold" href="visit.html">Find us</a></div></section></main><footer class="dark ft"><div class="wrap"><a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
-<p>Italian-style coffee and pastries, made to order.</p><div class="tri"><i></i><i></i><i></i></div><small>© <span id="year"></span> Caffè di Kash</small></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Italian coffee house | Caffè di Kash</title>
+  <meta name="description" content="Caffè di Kash by Abdul Rehman: freshly roasted espresso, croissants baked every morning and a table that is always yours.">
+  <meta name="theme-color" content="#1D0E07">
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="hd">
+    <nav class="wrap nav">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+
+      <button class="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
+
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our story</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a class="btn gold sm" href="visit.html">Find us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero dark">
+      <img src="images/cafe-hero.jpg"
+           alt="Bright, plant-filled interior of Caffè di Kash with wooden tables and a leather banquette"
+           width="1920" height="1088" fetchpriority="high">
+
+      <div class="wrap hc">
+        <h1>Your morning, poured the Italian way.</h1>
+        <p class="lead">Freshly roasted espresso, croissants baked at dawn and a table that is always yours.</p>
+        <p class="cta">
+          <a class="btn gold" href="menu.html">See the menu</a>
+          <a class="btn line" href="visit.html">Plan a visit</a>
+        </p>
+      </div>
+
+      <div class="glass status">
+        <b class="dot"></b>
+        <span data-open>Open daily</span>
+      </div>
+    </section>
+
+    <!-- ========== GOLD RIBBON ========== -->
+    <div class="rib">
+      <div class="wrap">
+        <span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/>
+            <path d="M8 7c4 2 4 8 8 10"/>
+          </svg>
+          Freshly roasted
+        </span>
+
+        <span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 5v3M4.5 9.5l2 2M19.5 9.5l-2 2"/>
+          </svg>
+          Baked every morning
+        </span>
+
+        <span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/>
+          </svg>
+          Made with care
+        </span>
+      </div>
+    </div>
+
+    <!-- ========== REGULARS' FAVOURITES ========== -->
+    <section class="cream">
+      <div class="wrap">
+
+        <div class="row">
+          <div>
+            <h2>What our regulars order</h2>
+            <p class="lead">Three cups and plates that never leave the menu.</p>
+          </div>
+          <a class="lnk" href="menu.html">Full menu</a>
+        </div>
+
+        <div class="grid">
+
+          <article class="fav gl">
+            <img src="images/cappuccino.jpg" alt="Cappuccino with heart latte art beside coffee beans" loading="lazy">
+            <div class="glass">
+              <div>
+                <h3>The Kash Cappuccino</h3>
+                <p>Velvety milk over a double shot.</p>
+              </div>
+              <span class="chip">$4.50</span>
+            </div>
+          </article>
+
+          <article class="fav gl">
+            <img src="images/iced-latte.jpg" alt="Iced latte, matcha latte and cold brew on a stone bar" loading="lazy">
+            <div class="glass">
+              <div>
+                <h3>Iced Latte</h3>
+                <p>Cold, smooth and lightly sweet.</p>
+              </div>
+              <span class="chip">$5.00</span>
+            </div>
+          </article>
+
+          <article class="fav gl">
+            <img src="images/croissant.jpg" alt="Fresh croissants and pastries in the glass display case" loading="lazy">
+            <div class="glass">
+              <div>
+                <h3>Butter Croissant</h3>
+                <p>Flaky, golden, baked at dawn.</p>
+              </div>
+              <span class="chip">$3.50</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== A LITTLE PIECE OF ITALY ========== -->
+    <section class="olive">
+      <div class="wrap split">
+        <div class="gl arch">
+          <img src="images/cafe-interior.jpg" alt="Barista at the wooden counter inside Caffè di Kash" loading="lazy">
+        </div>
+
+        <div>
+          <h2>A little piece of Italy</h2>
+          <p class="lead">Abdul Rehman built Caffè di Kash around one idea: great coffee tastes better shared.</p>
+          <a class="btn gold" href="story.html">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CALL TO ACTION ========== -->
+    <section class="dark glow ctr">
+      <div class="wrap">
+        <h2>Your table is waiting</h2>
+        <p class="lead">Drop by for a morning espresso or an afternoon catch-up.</p>
+        <a class="btn gold" href="visit.html">Find us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="dark ft">
+    <div class="wrap">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+      <p>Italian-style coffee and pastries, made to order.</p>
+      <div class="tri"><i></i><i></i><i></i></div>
+      <small>© <span id="year"></span> Caffè di Kash</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

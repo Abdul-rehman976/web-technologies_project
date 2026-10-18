@@ -1,30 +1,121 @@
-/* Edit opening hours here (0 = Sunday). Add timeZone, e.g. "Asia/Karachi", to follow the café's clock instead of the visitor's. */
-const CAFE={timeZone:undefined,hours:{0:[9,17],1:[7,19],2:[7,19],3:[7,19],4:[7,19],5:[7,19],6:[8,20]}};
-const $=(s,r=document)=>[...r.querySelectorAll(s)];
-const burger=$('.burger')[0],links=$('.links')[0];
-const setNav=o=>{links.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)};
-burger.onclick=()=>setNav(!links.classList.contains('open'));
-links.onclick=e=>e.target.closest('a')&&setNav(false);
-addEventListener('keydown',e=>e.key==='Escape'&&setNav(false));
-const page=location.pathname.split('/').pop()||'index.html';
-$('a:not(.btn)',links).forEach(a=>a.getAttribute('href')===page&&a.setAttribute('aria-current','page'));
-const hd=$('.hd')[0],sc=()=>hd.style.background=scrollY>20?'rgba(21,10,5,.92)':'';addEventListener('scroll',sc,{passive:true});
-const fmt=h=>(h%12||12)+(h<12?' am':' pm');
-const parts=new Intl.DateTimeFormat('en-GB',{timeZone:CAFE.timeZone,weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
-const get=t=>parts.find(p=>p.type===t).value;
-const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday')),now=+get('hour')+get('minute')/60;
-const [o,c]=CAFE.hours[day],nx=CAFE.hours[(day+1)%7];
-const open=now>=o&&now<c;
-const msg=open?`Open now, until ${fmt(c)}`:now<o?`Closed now, opens at ${fmt(o)}`:`Closed now, opens tomorrow at ${fmt(nx[0])}`;
-$('[data-open]').forEach(el=>{el.textContent=msg;el.previousElementSibling.classList.toggle('off',!open)});
-$('.hours [data-days]').forEach(r=>r.classList.toggle('today',r.dataset.days.split(',').includes(String(day))));
-const btns=$('.filters button');
-btns.forEach(b=>b.onclick=()=>{btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
-$('.mi').forEach(i=>i.hidden=b.dataset.f!=='all'&&i.dataset.c!==b.dataset.f)});
-$('#year')[0].textContent=new Date().getFullYear();
+const CAFE = {
+  timeZone: undefined,
+  hours: {
+    0: [9, 17],
+    1: [7, 19],
+    2: [7, 19],
+    3: [7, 19],
+    4: [7, 19],
+    5: [7, 19],
+    6: [8, 20],
+  },
+};
 
-/* Button hover: light follows the cursor + click ripple */
-$('.btn').forEach(b=>{
-b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--x',e.clientX-r.left+'px');b.style.setProperty('--y',e.clientY-r.top+'px')});
-b.addEventListener('pointerdown',e=>{const r=b.getBoundingClientRect(),s=Math.max(r.width,r.height)/4,d=document.createElement('span');d.className='rip';d.style.cssText=`width:${s}px;height:${s}px;left:${e.clientX-r.left-s/2}px;top:${e.clientY-r.top-s/2}px`;b.appendChild(d);d.onanimationend=()=>d.remove()});
+const $ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+const burger = $('.burger')[0];
+const links = $('.links')[0];
+
+const setNav = (isOpen) => {
+  links.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+};
+
+burger.onclick = () => setNav(!links.classList.contains('open'));
+
+links.onclick = (e) => e.target.closest('a') && setNav(false);
+
+addEventListener('keydown', (e) => e.key === 'Escape' && setNav(false));
+
+const page = location.pathname.split('/').pop() || 'index.html';
+
+$('a:not(.btn)', links).forEach((a) => {
+  if (a.getAttribute('href') === page) {
+    a.setAttribute('aria-current', 'page');
+  }
+});
+
+const header = $('.hd')[0];
+
+const onScroll = () => {
+  header.style.background = scrollY > 20 ? 'rgba(21,10,5,.92)' : '';
+};
+
+addEventListener('scroll', onScroll, { passive: true });
+
+const formatHour = (h) => (h % 12 || 12) + (h < 12 ? ' am' : ' pm');
+
+const parts = new Intl.DateTimeFormat('en-GB', {
+  timeZone: CAFE.timeZone,
+  weekday: 'short',
+  hour: 'numeric',
+  minute: 'numeric',
+  hourCycle: 'h23',
+}).formatToParts(new Date());
+
+const getPart = (type) => parts.find((p) => p.type === type).value;
+
+const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(getPart('weekday'));
+const now = +getPart('hour') + getPart('minute') / 60;
+
+const [openHour, closeHour] = CAFE.hours[day];
+const tomorrow = CAFE.hours[(day + 1) % 7];
+const isOpen = now >= openHour && now < closeHour;
+
+let message;
+if (isOpen) {
+  message = `Open now, until ${formatHour(closeHour)}`;
+} else if (now < openHour) {
+  message = `Closed now, opens at ${formatHour(openHour)}`;
+} else {
+  message = `Closed now, opens tomorrow at ${formatHour(tomorrow[0])}`;
+}
+
+$('[data-open]').forEach((el) => {
+  el.textContent = message;
+  el.previousElementSibling.classList.toggle('off', !isOpen);
+});
+
+$('.hours [data-days]').forEach((row) => {
+  row.classList.toggle('today', row.dataset.days.split(',').includes(String(day)));
+});
+
+const filterButtons = $('.filters button');
+
+filterButtons.forEach((button) => {
+  button.onclick = () => {
+    filterButtons.forEach((b) => b.setAttribute('aria-pressed', b === button));
+
+    $('.mi').forEach((item) => {
+      item.hidden = button.dataset.f !== 'all' && item.dataset.c !== button.dataset.f;
+    });
+  };
+});
+
+$('#year')[0].textContent = new Date().getFullYear();
+
+$('.btn').forEach((btn) => {
+
+  btn.addEventListener('pointermove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    btn.style.setProperty('--x', e.clientX - rect.left + 'px');
+    btn.style.setProperty('--y', e.clientY - rect.top + 'px');
+  });
+
+  btn.addEventListener('pointerdown', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height) / 4;
+    const ripple = document.createElement('span');
+
+    ripple.className = 'rip';
+    ripple.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${e.clientX - rect.left - size / 2}px;
+      top: ${e.clientY - rect.top - size / 2}px;
+    `;
+
+    btn.appendChild(ripple);
+    ripple.onanimationend = () => ripple.remove();
+  });
 });

@@ -1,13 +1,160 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Menu | Caffè di Kash</title><meta name="description" content="Espresso, cappuccino, cold drinks and fresh pastries at Caffè di Kash."><meta name="theme-color" content="#1D0E07">
-<link rel="icon" href="images/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head><body><a class="skip" href="#main">Skip to content</a>
-<header class="hd"><nav class="wrap nav"><a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
-<button class="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
-<ul class="links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="story.html">Our story</a></li><li><a href="visit.html">Visit</a></li><li><a class="btn gold sm" href="visit.html">Find us</a></li></ul></nav></header><main id="main">
-<section class="dark glow"><div class="wrap split"><div><h1>Made to order</h1><p class="lead">Every cup is pulled when you ask for it, and the pastries come out of the oven each morning.</p></div>
-<div class="gl"><img src="images/cafe-favorites.jpg" alt="Iced latte, matcha latte and cold brew on a stone bar" width="1536" height="1024"></div></div></section>
-<section class="cream"><div class="wrap"><div class="filters" role="group" aria-label="Filter menu"><button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="coffee">Coffee</button><button aria-pressed="false" data-f="cold">Cold drinks</button><button aria-pressed="false" data-f="bakery">Bakery</button></div>
-<div class="list"><div class="mi" data-c="coffee"><img class="mi-img" src="images/menu-espresso.jpg" alt="Espresso in a white cup on a wooden table" width="480" height="480" loading="lazy"><div><h3>Espresso</h3><p>A short, rich double shot.</p></div><span class="pr">$3.00</span></div><div class="mi" data-c="coffee"><img class="mi-img" src="images/menu-cappuccino.jpg" alt="Kash cappuccino with heart latte art" width="480" height="480" loading="lazy"><div><h3>The Kash Cappuccino<em class="tag">House pick</em></h3><p>Espresso with velvety steamed milk.</p></div><span class="pr">$4.50</span></div><div class="mi" data-c="coffee"><span class="mi-img ph" aria-hidden="true"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg></span><div><h3>Flat White</h3><p>Silky microfoam, bold coffee.</p></div><span class="pr">$4.50</span></div><div class="mi" data-c="cold"><img class="mi-img" src="images/menu-iced-latte.jpg" alt="Iced latte in a tall glass" width="480" height="480" loading="lazy"><div><h3>Iced Latte</h3><p>Espresso over ice and cold milk.</p></div><span class="pr">$5.00</span></div><div class="mi" data-c="cold"><img class="mi-img" src="images/menu-cold-brew.jpg" alt="Glass of cold brew over ice" width="480" height="480" loading="lazy"><div><h3>Cold Brew</h3><p>Steeped 18 hours, smooth finish.</p></div><span class="pr">$5.00</span></div><div class="mi" data-c="bakery"><img class="mi-img" src="images/menu-croissant.jpg" alt="Golden butter croissant" width="480" height="480" loading="lazy"><div><h3>Butter Croissant</h3><p>Flaky and golden.</p></div><span class="pr">$3.50</span></div><div class="mi" data-c="bakery"><img class="mi-img" src="images/menu-cornetto.jpg" alt="Cornetto dusted with sugar on a plate" width="480" height="480" loading="lazy"><div><h3>Cornetto</h3><p>Italian-style, lightly sweet.</p></div><span class="pr">$3.75</span></div></div></div></section></main><footer class="dark ft"><div class="wrap"><a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
-<p>Italian-style coffee and pastries, made to order.</p><div class="tri"><i></i><i></i><i></i></div><small>© <span id="year"></span> Caffè di Kash</small></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Menu | Caffè di Kash</title>
+  <meta name="description" content="Espresso, cappuccino, cold drinks and fresh pastries at Caffè di Kash.">
+  <meta name="theme-color" content="#1D0E07">
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="hd">
+    <nav class="wrap nav">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+
+      <button class="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
+
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our story</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a class="btn gold sm" href="visit.html">Find us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== INTRO ========== -->
+    <section class="dark glow">
+      <div class="wrap split">
+        <div>
+          <h1>Made to order</h1>
+          <p class="lead">Every cup is pulled when you ask for it, and the pastries come out of the oven each morning.</p>
+        </div>
+
+        <div class="gl">
+          <img src="images/cafe-favorites.jpg" alt="Iced latte, matcha latte and cold brew on a stone bar" width="1536" height="1024">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MENU LIST ========== -->
+    <section class="cream">
+      <div class="wrap">
+
+        <!-- Filter buttons (handled in script.js via data-f) -->
+        <div class="filters" role="group" aria-label="Filter menu">
+          <button aria-pressed="true" data-f="all">All</button>
+          <button aria-pressed="false" data-f="coffee">Coffee</button>
+          <button aria-pressed="false" data-f="cold">Cold drinks</button>
+          <button aria-pressed="false" data-f="bakery">Bakery</button>
+        </div>
+
+        <div class="list">
+
+          <!-- ----- Coffee ----- -->
+          <div class="mi" data-c="coffee">
+            <img class="mi-img" src="images/menu-espresso.jpg" alt="Espresso in a white cup on a wooden table" width="480" height="480" loading="lazy">
+            <div>
+              <h3>Espresso</h3>
+              <p>A short, rich double shot.</p>
+            </div>
+            <span class="pr">$3.00</span>
+          </div>
+
+          <div class="mi" data-c="coffee">
+            <img class="mi-img" src="images/menu-cappuccino.jpg" alt="Kash cappuccino with heart latte art" width="480" height="480" loading="lazy">
+            <div>
+              <h3>The Kash Cappuccino<em class="tag">House pick</em></h3>
+              <p>Espresso with velvety steamed milk.</p>
+            </div>
+            <span class="pr">$4.50</span>
+          </div>
+
+          <div class="mi" data-c="coffee">
+            <!-- No photo yet: coffee-cup icon placeholder -->
+            <span class="mi-img ph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 9h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Flat White</h3>
+              <p>Silky microfoam, bold coffee.</p>
+            </div>
+            <span class="pr">$4.50</span>
+          </div>
+
+          <!-- ----- Cold drinks ----- -->
+          <div class="mi" data-c="cold">
+            <img class="mi-img" src="images/menu-iced-latte.jpg" alt="Iced latte in a tall glass" width="480" height="480" loading="lazy">
+            <div>
+              <h3>Iced Latte</h3>
+              <p>Espresso over ice and cold milk.</p>
+            </div>
+            <span class="pr">$5.00</span>
+          </div>
+
+          <div class="mi" data-c="cold">
+            <img class="mi-img" src="images/menu-cold-brew.jpg" alt="Glass of cold brew over ice" width="480" height="480" loading="lazy">
+            <div>
+              <h3>Cold Brew</h3>
+              <p>Steeped 18 hours, smooth finish.</p>
+            </div>
+            <span class="pr">$5.00</span>
+          </div>
+
+          <!-- ----- Bakery ----- -->
+          <div class="mi" data-c="bakery">
+            <img class="mi-img" src="images/menu-croissant.jpg" alt="Golden butter croissant" width="480" height="480" loading="lazy">
+            <div>
+              <h3>Butter Croissant</h3>
+              <p>Flaky and golden.</p>
+            </div>
+            <span class="pr">$3.50</span>
+          </div>
+
+          <div class="mi" data-c="bakery">
+            <img class="mi-img" src="images/menu-cornetto.jpg" alt="Cornetto dusted with sugar on a plate" width="480" height="480" loading="lazy">
+            <div>
+              <h3>Cornetto</h3>
+              <p>Italian-style, lightly sweet.</p>
+            </div>
+            <span class="pr">$3.75</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="dark ft">
+    <div class="wrap">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+      <p>Italian-style coffee and pastries, made to order.</p>
+      <div class="tri"><i></i><i></i><i></i></div>
+      <small>© <span id="year"></span> Caffè di Kash</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
