@@ -250,3 +250,46 @@ main>section+section{border-top:1px solid var(--rule)}
 .tm-empty{grid-column:1/-1;text-align:center;padding:2.2rem 1.4rem}
 .tm-empty p{color:var(--fg2);max-width:30rem;margin:0 auto 1.4rem}
 @media(min-width:1025px) and (max-width:1250px){.links{gap:1.2rem}}
+/* ============ HOME: photo behind "Always on the menu" + responsive fixes ============ */
+.picks-sec{
+  background:
+    linear-gradient(90deg,rgba(13,6,4,.94) 0%,rgba(13,6,4,.6) 55%,rgba(13,6,4,.4) 100%),
+    linear-gradient(180deg,rgba(13,6,4,.55),rgba(13,6,4,0) 25%,rgba(13,6,4,0) 75%,rgba(13,6,4,.7)),
+    url("images/cafe-interior.jpg") center/cover no-repeat;
+}
+.picks-sec .picks{margin-top:2rem;background:rgba(13,6,4,.45);backdrop-filter:blur(6px)}
+.pk{background:rgba(13,6,4,.72)}
+
+/* picks: flexible row that wraps cleanly on every width (replaces the fixed 5-column grid) */
+.picks{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
+.pk{flex:1 1 0;min-width:0}
+.pk b{overflow-wrap:anywhere}
+@media(max-width:1099px){.pk{flex:0 1 calc(33.333% - .6rem)}}
+@media(max-width:620px){.pk{flex:0 1 calc(50% - .45rem);padding:1.1rem .6rem .9rem}.pk b{font-size:.72rem}.picks{gap:.7rem}}
+@media(max-width:360px){.pk{flex-basis:100%}}
+
+/* floating hero menu cards only when there is room (they overlapped the info row on tablets) */
+@media(max-width:1099px){.hero-cards{display:none}}
+
+/* header stays readable when it sticks over content */
+.hd{background:linear-gradient(180deg,rgba(13,6,4,.92),rgba(13,6,4,.7) 70%,rgba(13,6,4,0))}
+.hd .nav{backdrop-filter:none}
+
+/* tablets / phones */
+@media(max-width:860px){
+  .picks-sec{background:
+    linear-gradient(180deg,rgba(13,6,4,.86),rgba(13,6,4,.72) 50%,rgba(13,6,4,.9)),
+    url("images/cafe-interior.jpg") 60% center/cover no-repeat}
+  .row .lnk{padding:.4rem 0}
+  .band{text-align:center;justify-content:center}
+  .ctr h2{font-size:clamp(2rem,9vw,3rem)}
+}
+@media(max-width:600px){
+  section{padding:3rem 0}
+  .btn.sm{padding:.7rem 1.2rem}
+  .band{flex-direction:column;align-items:stretch;padding:1.1rem}
+  .band .btn{text-align:center}
+  .hero .info{gap:.9rem}
+}
+/* very large screens */
+@media(min-width:1700px){.picks-sec .wrap{width:min(1320px,80%)}}
