@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feedback | Caffè di Kash</title>
+  <meta name="description" content="Tell Caffè di Kash how we did. Share your rating and thoughts with Abdul Rehman and the team.">
+  <meta name="theme-color" content="#0d0604">
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="hd">
+    <nav class="wrap nav">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+
+      <button class="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
+
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our story</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn gold sm" href="visit.html">Find us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="dark">
+      <div class="wrap fb-grid">
+
+        <!-- ----- Left: intro ----- -->
+        <div class="fb-side">
+          <span class="mono">// Your feedback</span>
+          <h1>Tell us how we <em>did</em></h1>
+          <p class="lead">Every cup, every croissant, every visit. Your words help us do better.</p>
+
+          <ul class="fb-points">
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>
+              <span>Loved something? Tell us, we will pass it on to the team.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.500 2.500 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>
+              <span>Something not right? We read every message and want to fix it.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 5v3M4.500 9.500l2 2M19.500 9.500l-2 2"/></svg>
+              <span>It takes less than a minute. Name and email are optional.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ----- Right: form ----- -->
+        <div class="glass fb-card">
+
+          <form id="fb-form" class="fb-form" novalidate>
+
+            <fieldset class="fld">
+              <legend>Your rating *</legend>
+              <div class="stars" role="radiogroup" aria-label="Rating from 1 to 5 stars">
+                <input type="radio" name="rating" id="r5" value="5"><label for="r5" title="Excellent" aria-label="5 stars">★</label>
+                <input type="radio" name="rating" id="r4" value="4"><label for="r4" title="Very good" aria-label="4 stars">★</label>
+                <input type="radio" name="rating" id="r3" value="3"><label for="r3" title="Good" aria-label="3 stars">★</label>
+                <input type="radio" name="rating" id="r2" value="2"><label for="r2" title="Fair" aria-label="2 stars">★</label>
+                <input type="radio" name="rating" id="r1" value="1"><label for="r1" title="Poor" aria-label="1 star">★</label>
+              </div>
+              <span class="rate-txt" id="rate-txt" aria-live="polite"></span>
+              <span class="err">Please choose a rating.</span>
+            </fieldset>
+
+            <div class="fld">
+              <label for="fb-topic">What is it about?</label>
+              <select id="fb-topic" name="topic">
+                <option>Overall experience</option>
+                <option>Coffee</option>
+                <option>Cold drinks</option>
+                <option>Bakery</option>
+                <option>Service</option>
+                <option>Atmosphere</option>
+                <option>Website</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="fld">
+              <label for="fb-message">Your feedback *</label>
+              <textarea id="fb-message" name="message" maxlength="800" placeholder="Tell us what you liked, or what we can do better..." required></textarea>
+              <span class="cnt" id="fb-count">0 / 800</span>
+              <span class="err">Please write a few words (at least 5 characters).</span>
+            </div>
+
+            <div class="fb-row">
+              <div class="fld">
+                <label for="fb-name">Name <small>(optional)</small></label>
+                <input type="text" id="fb-name" name="name" autocomplete="name" maxlength="60" placeholder="Your name">
+              </div>
+              <div class="fld">
+                <label for="fb-email">Email <small>(optional)</small></label>
+                <input type="email" id="fb-email" name="email" autocomplete="email" maxlength="100" placeholder="you@example.com">
+                <span class="err">Please enter a valid email.</span>
+              </div>
+            </div>
+
+            <!-- spam trap: real visitors never see or fill this -->
+            <div class="hp-field" aria-hidden="true">
+              <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="fb-actions">
+              <button class="btn gold" type="submit" id="fb-submit">Send feedback</button>
+              <span class="fb-status" id="fb-status" role="alert"></span>
+            </div>
+            <p class="fb-note">We only use your feedback to improve Caffè di Kash.</p>
+          </form>
+
+          <!-- Thank-you message (shown after sending) -->
+          <div class="fb-done" id="fb-done" tabindex="-1" hidden>
+            <div class="tick">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg>
+            </div>
+            <h2>Grazie <em>mille</em></h2>
+            <p>Thank you for taking the time. Your feedback helps us pour a better cup.</p>
+            <div class="cta" style="justify-content:center">
+              <a class="btn gold" href="menu.html">See the menu</a>
+              <button class="btn line" type="button" id="fb-again">Send another</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GUEST TESTIMONIALS (filled from script.js) ========== -->
+    <section class="dark">
+      <div class="wrap">
+        <div class="st-head">
+          <span class="mono">// Kind words</span>
+          <h2>What guests <em>say</em></h2>
+          <p class="lead">Real words from people who have visited Caffè di Kash.</p>
+        </div>
+        <div class="tm-grid" id="tm-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="dark ft">
+    <div class="wrap">
+      <a class="brand" href="index.html">Caffè di Kash<small>by Abdul Rehman</small></a>
+      <p>Italian-style coffee and pastries, made to order.</p>
+      <div class="tri"><i></i><i></i><i></i></div>
+      <small>© <span id="year"></span> Caffè di Kash</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

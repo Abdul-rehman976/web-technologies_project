@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,14 +6,14 @@
 
     <title>Visit | Caffè di Kash</title>
     <meta name="description" content="Opening hours and directions for Caffè di Kash.">
-    <meta name="theme-color" content="#1D0E07">
+    <meta name="theme-color" content="#0d0604">
 
     <link rel="icon" href="images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,18 +37,20 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="story.html">Our story</a></li>
                 <li><a href="visit.html">Visit</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a class="btn gold sm" href="visit.html">Find us</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main">
-        <section class="dark glow">
+        <section class="dark">
             <div class="wrap split">
                 <div>
-                    <h1>Make time for us</h1>
+                    <h1>Make time <em>for us</em></h1>
 
-                    <p class="lead">123 Example Street, Your City</p>
+                    <p class="lead">Raya, DHA, Lahore, Pakistan</p>
 
                     <div class="glass hours">
                         <div data-days="1,2,3,4,5">
@@ -71,12 +72,14 @@
                     <p class="cta">
                         <a
                             class="btn gold"
-                            href="https://www.google.com/maps/search/?api=1&query=Caff%C3%A8+di+Kash"
+                            href="https://www.google.com/maps/search/?api=1&query=Raya+DHA+Lahore+Pakistan"
                             target="_blank"
                             rel="noopener"
                         >
                             Get directions
                         </a>
+
+                        <a class="btn line" href="tel:+923134004948">Call 0313 4004948</a>
 
                         <span class="status glass">
                             <b class="dot"></b>
@@ -85,13 +88,12 @@
                     </p>
                 </div>
 
-                <div class="gl">
-                    <img
-                        src="images/cafe-interior.jpg"
-                        alt="Barista at the wooden counter inside Caffè di Kash"
-                        width="1536"
-                        height="1024"
-                    >
+                <!-- Rotating dotted globe (drawn by script.js with d3) -->
+                <div class="globe-wrap" id="globe" role="img" aria-label="Rotating dotted globe with the Caffè di Kash location in Raya, DHA Lahore, Pakistan" tabindex="0">
+                    <canvas></canvas>
+                    <p class="globe-msg">Loading map…</p>
+                    <span class="glass globe-hint">Drag to rotate</span>
+                    <button class="btn gold sm globe-locate" type="button">Show our café</button>
                 </div>
             </div>
         </section>
@@ -116,6 +118,7 @@
         </div>
     </footer>
 
+    <script src="globe-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

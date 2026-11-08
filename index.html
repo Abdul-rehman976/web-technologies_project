@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Italian coffee house | Caffè di Kash</title>
   <meta name="description" content="Caffè di Kash by Abdul Rehman: freshly roasted espresso, croissants baked every morning and a table that is always yours.">
-  <meta name="theme-color" content="#1D0E07">
+  <meta name="theme-color" content="#0d0604">
   <link rel="icon" href="images/favicon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,6 +32,8 @@
         <li><a href="menu.html">Menu</a></li>
         <li><a href="story.html">Our story</a></li>
         <li><a href="visit.html">Visit</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a class="btn gold sm" href="visit.html">Find us</a></li>
       </ul>
     </nav>
@@ -41,122 +43,52 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero dark">
-      <img src="images/cafe-hero.jpg"
-           alt="Bright, plant-filled interior of Caffè di Kash with wooden tables and a leather banquette"
-           width="1920" height="1088" fetchpriority="high">
+      <img class="hero-img" src="images/story-quality.jpg" alt="Heart latte art cup beside freshly roasted coffee beans" width="900" height="675" fetchpriority="high">
 
+      <!-- Menu cards that match the headline: roasted espresso + croissants baked at dawn -->
+      <div class="hero-cards">
+        <a class="glass hero-card" href="menu.html">
+          <img src="images/menu-cappuccino.jpg" alt="Kash cappuccino with heart latte art" width="480" height="480">
+          <span><b>Kash Cappuccino</b><small>Freshly roasted espresso</small></span>
+        </a>
+        <a class="glass hero-card" href="menu.html">
+          <img src="images/menu-croissant.jpg" alt="Golden butter croissant" width="480" height="480">
+          <span><b>Butter Croissant</b><small>Baked at dawn</small></span>
+        </a>
+      </div>
       <div class="wrap hc">
-        <h1>Your morning, poured the Italian way.</h1>
-        <p class="lead">Freshly roasted espresso, croissants baked at dawn and a table that is always yours.</p>
-        <p class="cta">
-          <a class="btn gold" href="menu.html">See the menu</a>
-          <a class="btn line" href="visit.html">Plan a visit</a>
-        </p>
-      </div>
-
-      <div class="glass status">
-        <b class="dot"></b>
-        <span data-open>Open daily</span>
-      </div>
-    </section>
-
-    <!-- ========== GOLD RIBBON ========== -->
-    <div class="rib">
-      <div class="wrap">
-        <span>
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/>
-            <path d="M8 7c4 2 4 8 8 10"/>
-          </svg>
-          Freshly roasted
-        </span>
-
-        <span>
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 5v3M4.5 9.5l2 2M19.5 9.5l-2 2"/>
-          </svg>
-          Baked every morning
-        </span>
-
-        <span>
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/>
-          </svg>
-          Made with care
-        </span>
-      </div>
-    </div>
-
-    <!-- ========== REGULARS' FAVOURITES ========== -->
-    <section class="cream">
-      <div class="wrap">
-
-        <div class="row">
-          <div>
-            <h2>What our regulars order</h2>
-            <p class="lead">Three cups and plates that never leave the menu.</p>
-          </div>
-          <a class="lnk" href="menu.html">Full menu</a>
-        </div>
-
-        <div class="grid">
-
-          <article class="fav gl">
-            <img src="images/cappuccino.jpg" alt="Cappuccino with heart latte art beside coffee beans" loading="lazy">
-            <div class="glass">
-              <div>
-                <h3>The Kash Cappuccino</h3>
-                <p>Velvety milk over a double shot.</p>
-              </div>
-              <span class="chip">$4.50</span>
-            </div>
-          </article>
-
-          <article class="fav gl">
-            <img src="images/iced-latte.jpg" alt="Iced latte, matcha latte and cold brew on a stone bar" loading="lazy">
-            <div class="glass">
-              <div>
-                <h3>Iced Latte</h3>
-                <p>Cold, smooth and lightly sweet.</p>
-              </div>
-              <span class="chip">$5.00</span>
-            </div>
-          </article>
-
-          <article class="fav gl">
-            <img src="images/croissant.jpg" alt="Fresh croissants and pastries in the glass display case" loading="lazy">
-            <div class="glass">
-              <div>
-                <h3>Butter Croissant</h3>
-                <p>Flaky, golden, baked at dawn.</p>
-              </div>
-              <span class="chip">$3.50</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== A LITTLE PIECE OF ITALY ========== -->
-    <section class="olive">
-      <div class="wrap split">
-        <div class="gl arch">
-          <img src="images/cafe-interior.jpg" alt="Barista at the wooden counter inside Caffè di Kash" loading="lazy">
-        </div>
-
         <div>
-          <h2>A little piece of Italy</h2>
-          <p class="lead">Abdul Rehman built Caffè di Kash around one idea: great coffee tastes better shared.</p>
-          <a class="btn gold" href="story.html">Read our story</a>
+          <span class="mono">// Italian coffee house</span>
+          <h1>Coffee<br>for your<em>morning</em></h1>
+          <p class="lead">Freshly roasted espresso and croissants baked at dawn, poured the Italian way.</p>
+          <div class="cta"><a class="btn gold" href="menu.html">Explore menu ↗</a><a class="btn pale" href="visit.html">Find us</a></div>
+          <div class="glass status"><b class="dot"></b><span data-open>Open daily</span></div>
         </div>
+        <div class="info"><div>Open daily<span>07:00 – 19:00</span></div><div>Raya, DHA<span>Lahore, Pakistan</span></div><div>By Abdul Rehman<span>Caffè di Kash</span></div></div>
       </div>
     </section>
+
+    <section>
+      <div class="wrap">
+        <div class="row"><div><span class="mono">// What our regulars order</span><h2>Always on the <em>menu</em></h2></div><a class="lnk" href="menu.html">Full menu</a></div>
+        <div class="picks" style="margin-top:2rem">
+          <article class="pk"><b>Espresso</b><span>$3.00</span><a class="btn gold sm" href="menu.html">View</a></article>
+          <article class="pk"><b>Kash Cappuccino</b><span>$4.50</span><a class="btn gold sm" href="menu.html">View</a></article>
+          <article class="pk"><b>Iced Latte</b><span>$5.00</span><a class="btn gold sm" href="menu.html">View</a></article>
+          <article class="pk"><b>Cold Brew</b><span>$5.00</span><a class="btn gold sm" href="menu.html">View</a></article>
+          <article class="pk"><b>Butter Croissant</b><span>$3.50</span><a class="btn gold sm" href="menu.html">View</a></article>
+        </div>
+        <div class="band"><span>Croissants out of the oven every morning.</span><a class="btn pale sm" href="visit.html">Plan a visit</a></div>
+        
+      </div>
+    </section>
+
+  
 
     <!-- ========== CALL TO ACTION ========== -->
-    <section class="dark glow ctr">
+    <section class="dark ctr">
       <div class="wrap">
-        <h2>Your table is waiting</h2>
+        <h2>Your table is <em>waiting</em></h2>
         <p class="lead">Drop by for a morning espresso or an afternoon catch-up.</p>
         <a class="btn gold" href="visit.html">Find us</a>
       </div>
@@ -174,7 +106,8 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
