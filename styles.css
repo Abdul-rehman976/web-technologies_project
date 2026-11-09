@@ -251,14 +251,7 @@ main>section+section{border-top:1px solid var(--rule)}
 .tm-empty p{color:var(--fg2);max-width:30rem;margin:0 auto 1.4rem}
 @media(min-width:1025px) and (max-width:1250px){.links{gap:1.2rem}}
 /* ============ HOME: photo behind "Always on the menu" + responsive fixes ============ */
-.picks-sec{
-  background:
-    linear-gradient(90deg,rgba(13,6,4,.94) 0%,rgba(13,6,4,.6) 55%,rgba(13,6,4,.4) 100%),
-    linear-gradient(180deg,rgba(13,6,4,.55),rgba(13,6,4,0) 25%,rgba(13,6,4,0) 75%,rgba(13,6,4,.7)),
-    url("images/cafe-interior.jpg") center/cover no-repeat;
-}
-.picks-sec .picks{margin-top:2rem;background:rgba(13,6,4,.45);backdrop-filter:blur(6px)}
-.pk{background:rgba(13,6,4,.72)}
+.picks-sec .picks{margin-top:2rem}
 
 /* picks: flexible row that wraps cleanly on every width (replaces the fixed 5-column grid) */
 .picks{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
@@ -277,9 +270,6 @@ main>section+section{border-top:1px solid var(--rule)}
 
 /* tablets / phones */
 @media(max-width:860px){
-  .picks-sec{background:
-    linear-gradient(180deg,rgba(13,6,4,.86),rgba(13,6,4,.72) 50%,rgba(13,6,4,.9)),
-    url("images/cafe-interior.jpg") 60% center/cover no-repeat}
   .row .lnk{padding:.4rem 0}
   .band{text-align:center;justify-content:center}
   .ctr h2{font-size:clamp(2rem,9vw,3rem)}
@@ -293,3 +283,9 @@ main>section+section{border-top:1px solid var(--rule)}
 }
 /* very large screens */
 @media(min-width:1700px){.picks-sec .wrap{width:min(1320px,80%)}}
+
+/* small photo inside each menu card */
+.pk{background:linear-gradient(180deg,rgba(13,6,4,.5),rgba(13,6,4,.88)),var(--img) center/cover no-repeat;border-color:rgba(255,255,255,.18);min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pk b,.pk span{text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.pk:hover{background-size:112%}
+@media(max-width:620px){.pk{min-height:140px}}
